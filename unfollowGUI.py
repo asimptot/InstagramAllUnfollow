@@ -1,11 +1,12 @@
 import pyautogui as pg
 import time
 from tkinter import *
+import subprocess
 
 def unf_list():
     time.sleep(10)
 
-    for m in range(6):
+    for m in range(7):
         pg.press('tab')
         time.sleep(1)
     pg.press('enter')
@@ -16,10 +17,7 @@ def close():
         pg.hotkey('alt', 'f4')
 
 def open_browser():
-    pg.press('win')
-    pg.typewrite('chrome.exe')
-    time.sleep(2)
-    pg.press('enter')
+    subprocess.Popen('C:\Program Files (x86)\Google\Chrome\Application\chrome.exe')
     time.sleep(2)
 
 def unfollow(sayi):
@@ -64,8 +62,6 @@ def butonKomutlari():
     close()
 
 p = Tk()
-p.wm_iconbitmap('myicon.ico')
-p.wm_title('Title')
 p.title("Unfollows Your Followers")
 p.geometry("700x200")
 
